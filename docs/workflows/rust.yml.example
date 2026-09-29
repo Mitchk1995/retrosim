@@ -1,0 +1,40 @@
+name: Rust Windows prototype
+on:
+  push:
+    branches: [main, 'demo/**']
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Rust tools
+        run: rustup component add rustfmt clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Simulation tests
+        run: cargo test -p retrosim_sim
+      - name: Check Rust
+        run: cargo clippy --workspace --all-targets -- -D warnings
+      - name: Build Windows executable
+        run: cargo build -p retrosim_app
+      - name: Stage portable build
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path build/retrosim | Out-Null
+          Copy-Item -LiteralPath target/debug/retrosim.exe -Destination build/retrosim/retrosim.exe
+          Copy-Item -LiteralPath prototypes/combat-lab/README.md -Destination build/retrosim/README.md
+          Copy-Item -LiteralPath Cargo.lock -Destination build/retrosim/Cargo.lock
+      - uses: actions/upload-artifact@v4
+        with:
+          name: retrosim-windows
+          path: build/retrosim/
+          if-no-files-found: error
+          retention-days: 30

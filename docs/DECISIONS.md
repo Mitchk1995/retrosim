@@ -4,6 +4,10 @@ Last updated: 2026-09-29.
 
 ## Confirmed
 
+- Rust + Bevy for the game and combat prototype; native Windows development.
+- Primary display is 2560 x 1600.
+- Graphics use PNG sprites/tile atlases loaded and rendered by Bevy; artwork does not need to be encoded as Rust drawing instructions.
+
 - The player is a persistent adventurer: exploring, fighting, gathering, and recruiting capable companions.
 - Companion relationships and interactive conversations are central.
 - A living society, observable emergence, long-term progression, broad possibilities, and meaningful mysteries are goals.
@@ -18,7 +22,6 @@ Last updated: 2026-09-29.
 
 ## Proposed, not confirmed
 
-- Rust + Bevy; Windows desktop first.
 - Dalelands/Cormanthor and Myth Drannor as a Forgotten Realms starting region. Choose a source-backed era before writing canonical content.
 - A small travelling party with autonomous companions.
 - Recoverable defeat as the initial default.

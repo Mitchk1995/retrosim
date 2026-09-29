@@ -1,6 +1,8 @@
 # Working on Retrosim
 
-Read README.md and docs/DECISIONS.md before changing the project.
+Read README.md, docs/DECISIONS.md, and docs/HANDOFF.md before changing the project.
+
+The prototype must use Rust + Bevy. Primary display: 2560 x 1600. Artwork is PNG sprites/tile atlases rendered by Bevy; do not resume the superseded browser game or choose procedural Rust pixel painting as the production art architecture.
 
 - Keep confirmed user decisions separate from recommendations. Combat is not chosen.
 - Build and compare small playable demos before broad world or engine implementation.

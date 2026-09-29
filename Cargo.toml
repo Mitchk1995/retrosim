@@ -1,0 +1,11 @@
+[workspace]
+members = ["crates/retrosim_sim", "crates/retrosim_app"]
+resolver = "3"
+
+[profile.dev]
+opt-level = 1
+debug = 0
+
+[profile.release]
+strip = true
+lto = "thin"

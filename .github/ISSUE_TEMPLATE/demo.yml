@@ -1,0 +1,22 @@
+name: Demo or feature
+description: A focused playable or visible improvement
+body:
+  - type: textarea
+    id: experience
+    attributes:
+      label: Experience to test
+      description: What should the player be able to do, or what decision will this demo resolve?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Done when
+      description: Concrete observable acceptance criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and open decisions
+      description: Keep the change focused and identify unresolved choices.

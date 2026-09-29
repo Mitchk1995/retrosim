@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "planned",
+  "scenario": "unnamed-trail-and-ruined-gateway",
+  "phaseOne": [
+    "step",
+    "pause"
+  ],
+  "modes": [
+    {
+      "id": "step",
+      "label": "World moves when you act",
+      "status": "planned"
+    },
+    {
+      "id": "pause",
+      "label": "Real-time with pause",
+      "status": "planned"
+    },
+    {
+      "id": "resolve",
+      "label": "Plan and resolve",
+      "status": "optional"
+    },
+    {
+      "id": "timing",
+      "label": "Party commands with timing",
+      "status": "optional"
+    }
+  ],
+  "sharedUi": [
+    "party-status",
+    "target-preview",
+    "action-bar",
+    "time-control",
+    "companion-orders",
+    "reset"
+  ],
+  "selectionDecision": "Choose after playing comparable demos; no combat mode is approved yet."
+}
